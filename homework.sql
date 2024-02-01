@@ -1,12 +1,11 @@
 -- 1. List all customers who live in Texas (use JOINs)  
 
-SELECT first_name, last_name, city FROM customer
+SELECT first_name, last_name, district FROM customer
 JOIN address ON address.address_id = customer.address_id
-JOIN city ON address.city_id = city.city_id
-WHERE city.city = 'Texas'
+WHERE address.district = 'Texas'
 
-SELECT * FROM city
--- A) There are no customers who live in Texas..
+
+SELECT * FROM country
 
 -- 2. Get all payments above $6.99 with the Customer's FullName
 
@@ -25,12 +24,12 @@ WHERE customer_id IN (
 
 -- 4. List all customers that live in Nepal (use the city table)
 
-SELECT first_name, last_name FROM customer
+SELECT first_name, last_name, country FROM customer
 JOIN address ON customer.address_id = address.address_id
 JOIN city ON address.city_id = city.city_id
-WHERE city.city = 'Nepal'
+JOIN country ON city.country_id = country.country_id
+WHERE country.country = 'Nepal'
 
--- A) NONE
 
 -- 5. Which staff member had the most transactions?
 

@@ -4,7 +4,7 @@ SELECT first_name, last_name, district FROM customer
 JOIN address ON address.address_id = customer.address_id
 WHERE address.district = 'Texas'
 
--- A) There are 5 customers that live in Texas
+-- A) Jennifer, Kim, Richard, Bryan, and Ian live in Texas
 
 -- 2. Get all payments above $6.99 with the Customer's FullName
 
@@ -24,7 +24,7 @@ WHERE customer_id IN (
     )
     GROUP BY customer.first_name, customer.last_name
 
--- A) There are 7 people who made payments over $175
+-- A) Peter, Tommy, Karl, Clara, Eleanor, Marion, and Rhonda made payments over $175
 
 -- 4. List all customers that live in Nepal (use the city table)
 
